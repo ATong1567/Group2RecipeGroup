@@ -13,20 +13,28 @@ function readClicked(){
 
                     let p = document.getElementById("parag");
 
-                    let div = document.createElement("div");
+                    let div = document.createElement("brick");
+
 
 
                   //  imgloop();
                     for(let i=0;i<data.recipe.length;i++)
                     {
-                            let div = document.createElement("div");
+                            let div = document.createElement("brick");
 
 
+                            let author = document.createElement("author");
+                            let name = document.createElement("name");
+                            let ingredients = document.createElement("ingredients");
+                            let instructions = document.createElement("instructions");
+                            let allergies = document.createElement("allergies");
+                            let diet = document.createElement("diet");
 
-                            let pa = document.createElement("pa");
                             pa.style.cssText = 'word-wrap:break-word;';
 
                             div.classList.add("file-row")
+                            div.classList.add("recipeFormat")
+
 
                             console.log(i)
                             if(data.recipe[i]==null)
@@ -49,25 +57,28 @@ function readClicked(){
                             div.appendChild(img);
 
 
-
-                            pa.innerHTML += "<br/> Recipe by:" + data.recipe[i].uname
-                            pa.innerHTML += "<br /> Name:" + data.recipe[i].name + "<br />"+  "Ingredients:" + data.recipe[i].ingredients;
-                            pa.innerHTML += "<br /> Instructions:" + data.recipe[i].instructions;
-                            pa.innerHTML += "<br /> Allergies:" + data.recipe[i].allergies;
+                            name.innerHTML += "<br />" + data.recipe[i].name
+                            name.style.cssText = 'font-size:25px;color:rgb(242,235,216);word-wrap:break-word;';
+                            author.innerHTML += "<br/> Recipe by:" + data.recipe[i].uname
+                            ingredients.innerHTML += "<br />"+  "Ingredients:" + data.recipe[i].ingredients;
+                            instructions.innerHTML += "<br /> Instructions:" + data.recipe[i].instructions;
+                            allergies.innerHTML += "<br /> Allergies:" + data.recipe[i].allergies;
                             for(let j = 0; j < data.recipe[i].allergies.length; j++){
                               $(div).addClass(data.recipe[i].allergies[j]);
                             }
-                            pa.innerHTML += "<br /> Diets:" + data.recipe[i].diet;
+                            diet.innerHTML += "<br /> Diets:" + data.recipe[i].diet;
 
                             for(let j = 0; j < data.recipe[i].diet.length; j++){
                               $(div).addClass(data.recipe[i].diet[j]);
                             }
-
-
-                            div.appendChild(pa);
+                            div.appendChild(name);
+                            div.appendChild(author);
+                            div.appendChild(ingredients);
+                            div.appendChild(instructions);
+                            div.appendChild(allergies);
+                            div.appendChild(diet);
 
                     }
-
                     div.appendChild(pa);
                     p.appendChild(div);
                     //p.classList.add("file-row")

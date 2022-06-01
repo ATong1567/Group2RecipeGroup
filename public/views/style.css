@@ -241,7 +241,6 @@ input[type=password]:focus {
 .file-row {
   width:100%;
   display: inline-block;
-
   margin-bottom: 30px;
   text-align: center;
   word-wrap: break-word
@@ -252,10 +251,13 @@ input[type=password]:focus {
   border: 3px solid rgb(85,59,34);
 
 }
-
 #parag{
   margin-left: 30px;
   margin-right: 30px;
   column-count: 3;
   column-gap: 2em;
+}
+
+.recipeFormat{
+  word-wrap:break-word;
 }
